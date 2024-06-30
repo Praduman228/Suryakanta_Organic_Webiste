@@ -249,7 +249,48 @@
         opacity:0,
         stagger:0.15
       })
+      gsap.from(".about-container h2",{
+      x:-200,
+      duration:0.5,
+      opacity:0,
+     
+      scrollTrigger:{
+        trigger:".about",
+        scoller:"body",
+        markers:true,
+        start:"top 50%"
 
+      }
+     
+     })
+     gsap.from(".about-container p",{
+      x:-200,
+      duration:0.5,
+      opacity:0,
+      scrollTrigger:{
+        trigger:".about-container h2",
+        scoller:"body",
+        markers:true,
+        start:"top 50%"
+
+      }
+     
+     })
+
+     gsap.from(".about-container img",{
+      x:-200,
+      duration:0.5,
+      opacity:0,
+      scrollTrigger:{
+        trigger:".about-container h2",
+        scoller:"body",
+        markers:true,
+        start:"top 50%"
+
+      }
+     
+     })
+     
     </script>
 </body>
 </html>
