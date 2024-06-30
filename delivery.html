@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <link href='https://fonts.googleapis.com/css?family=Afacad' rel='stylesheet'>
+
+    <style>
+         * {
+    margin: 0;
+    /* padding: 0; */
+    box-sizing: border-box;
+  }
+  body {
+    position: relative; 
+    font-family: 'Afacad';
+    background-color:  #ecf7f0;
+    line-height: 1.6;
+
+  }
+ 
+  /* Header Styles */
+  ul{
+      list-style: none;
+  }
+  a{
+      text-decoration: none;
+  }
+  /* .container{
+      max-width: 1170px;
+      margin:auto;
+  } */
+  .row{
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .align-items-center{
+      align-items: center;
+  }
+  .justify-content-between{
+      justify-content: space-between;
+  }
+  /*header*/
+  .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000; 
+      background-color:  #0f5256;
+      line-height: 1.5;
+    }
+  
+  .header .logo,
+  .header .nav{
+      padding:0 15px;
+  }
+  .logo img{
+      width:200px;
+      /* height: 60px; */
+      margin-left: 100px;
+      /* margin-bottom: 20px; */
+  }
+  .header .nav ul li{
+      display: inline-block;
+      margin-right: 40px;
+  }
+  .header .nav ul li a{
+      display: block;
+      font-size: 20px;
+      text-transform: capitalize;
+      color: white;
+      padding: 10px 0;
+      transition: all 0.5s ease;
+  }
+  .header .nav ul li a.active,
+  .header .nav ul li a:hover{
+      color: #69ba6b;
+  }
+  .nav-toggler{
+      height: 34px;
+      width: 44px;
+      background-color:black;
+      border-radius: 4px;
+      cursor: pointer;
+      border:none;
+      display: none;
+      margin-right: 15px;
+  }
+  .nav-toggler:focus{
+      outline: none;
+      box-shadow: 0 0 15px rgba(255,255,255,0.5);
+  }
+  .nav-toggler span{
+      height: 2px;
+      width: 20px;
+      background-color: white;
+      display: block;
+      margin:auto;
+      position: relative;
+      transition: all 0.3s ease;
+  }
+  .nav-toggler.active span{
+      background-color: transparent;
+  }
+  .nav-toggler span::before,
+  .nav-toggler span::after{
+      content: '';
+      position: absolute;
+      left:0;
+      top:0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      transition: all 0.3s ease;
+  }
+  .nav-toggler span::before{
+      transform: translateY(-6px);
+  }
+  .nav-toggler.active span::before{
+      transform: rotate(45deg);
+  }
+  .nav-toggler span::after{
+      transform: translateY(6px);
+  }
+  .nav-toggler.active span::after{
+      transform: rotate(135deg);
+  }
+  @media(max-width:991px){
+     .nav-toggler{
+         display: block;
+     }
+     .header .nav{
+         width: 100%;
+         padding:0;
+         max-height: 0px;
+         overflow: hidden;
+         visibility: hidden;
+         transition: all 0.5s ease;
+     }
+     .header .nav.open{
+         visibility: visible;
+     }
+     .header .nav ul{
+         padding:12px 15px 0;
+         margin-top: 12px;
+         border-top:1px solid rgba(255,255,255,0.2);
+     }
+     .header .nav ul li{
+         display: block;
+         margin:0;
+     }
+  }
+  /* css for delivery */
+  .delivery{
+    margin-top: 80px;
+  }
+  .title p span{
+    color: #48d84a;
+  }
+  .delivery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            
+        }
+         .delivery-container .title h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            text-transform: capitalize;
+            /* font-size: 35px; */
+            margin-top: 30px;
+        }
+        .delivery-container .title p{
+            text-align: center;
+            font-size: 20px;
+        }
+        .delivery-container .box-container{
+           display: flex;
+           justify-content: space-evenly;
+           align-items: center;
+        }
+        .delivery-container .box-container .card-content{
+            
+            width: 400px;
+            height: 200px;
+            margin-top: 30px;
+            background-image: url(assest/delivery/background\ 2.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+       
+      
+.card-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+.card-content h4 {
+    font-size: 25px;
+    margin-left: 36px;
+    margin-top: 15px;
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.card-content .box {
+    border: 0.5px solid #a7aaaa;
+    width: 320px;
+    margin-left: 36px;
+    margin-top: 27px;
+    position: relative; 
+    z-index: 2; 
+    color: white;
+}
+.card-content .box ul li{
+    list-style-type: square;
+
+}
+/* css for order process */
+.order-process{
+    
+    width: 920px;
+    height: 220px;
+    margin-bottom: 10px;
+    margin: auto;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    background-image: url(assest/delivery/background\ 2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.order-process::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+.order-process .order-content{
+  
+    width: 850px;
+    margin-top: 31px;
+    margin-left: 34px;
+    border: 0.5px solid #a7aaaa;
+    position: relative;
+    z-index: 2;
+}
+.order-process .order-content h4,ol{
+    margin-left: 36px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 2;
+    color: white;
+    list-style-type: none;
+}
+.order-process .order-content h4{
+    font-size: 25px;
+}
+
+/* Media queries for delivery section */
+@media (max-width: 991px) {
+    .delivery-container .title h2 {
+        font-size: 30px; 
+    }
+
+    .delivery-container .title p {
+        font-size: 20px;
+    }
+
+    .delivery-container .box-container {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .delivery-container .box-container .card-content {
+        width: 100%; 
+        margin-top: 30px;
+        height: 150px; 
+    }
+
+    .card-content h4 {
+        font-size: 20px; 
+        margin-left: 0;
+        margin-top: 10px; 
+    }
+
+    .card-content .box {
+        width: 90%;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .delivery-container .title h2 {
+        font-size: 25px; 
+    }
+
+    .delivery-container .title p {
+        font-size: 18px; 
+    }
+
+    .delivery-container .box-container .card-content {
+        width: 100%; 
+    }
+
+    .card-content h4 {
+        font-size: 18px; 
+        margin-top: 5px;
+        margin-left: 15px; 
+    }
+
+    .card-content .box {
+        width: 90%; 
+        margin-top: 15px; 
+        margin-left: 18px;
+    }
+}
+
+/* Media queries for ordering process */
+@media (max-width: 991px) {
+    .order-process {
+        width: 90%;
+        height: auto;
+        
+    }
+
+    .order-process::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    .order-process .order-content {
+        width: 90%;
+        margin: 50px auto;
+        /* padding: 20px; */
+        border: 1px solid #a7aaaa;
+        /* border-radius: 10px; */
+        background-color: transparent;
+    }
+
+    .order-process .order-content h4 {
+        font-size: 25px;
+        margin-left: 5px;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .order-process .order-content ol {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .order-process .order-content ol li {
+        font-size: 18px;
+        color: white;
+    }
+}
+
+@media (max-width: 767px) {
+  
+    .order-process .order-content h4 {
+        font-size: 25px;
+        /* margin-left: 36px; */
+        margin-top: 10px;
+        color: white;
+    }
+
+    .order-process .order-content ol {
+        /* margin-left: 36px; */
+        margin-top: 10px;
+    }
+
+    .order-process .order-content ol li {
+        font-size: 18px;
+        color: white;
+    }
+}
+/* css for FAQs */
+.faqs{
+    margin-bottom: 10px;
+}
+.faqs h3{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.faq-item {
+    margin: auto;
+    width: 920px;
+     
+    border: 1px solid rgb(209, 204, 204); 
+    border-radius: 5px; 
+    overflow: hidden; 
+    
+    
+}
+
+.question {
+    cursor: pointer;
+    background-color: white;
+    padding: 10px;
+    border-bottom: 1px solid gray; 
+    transition: all 0.3s ease;
+    color: black;
+}
+.question:hover{
+    background-color: #0f5256;
+    color: white;
+}
+
+.answer {
+    display: none;
+    padding: 10px;
+    border-bottom: 1px solid rgb(209, 204, 204); 
+    transition: all 0.3s ease;
+}
+
+.faq-item.active {
+    margin-bottom: 40px;
+}
+
+.question.active {
+    font-size: 20px;
+    background-color: white; 
+}
+.question.active:hover{
+    background-color: #0f5256;
+}
+
+.answer.active {
+    display: block;
+    font-size: 18px;
+    background-color: #f5f0f0; 
+}
+
+@media (max-width: 991px) {
+    .faq-item {
+        width: 90%;
+    }
+    .faqs h3{
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .faq-item {
+        width: 90%;
+    }
+
+    .faqs {
+        font-size: 15px;
+    }
+
+    .question.active,
+    .answer.active {
+        background-size: 110%;
+    }
+}
+/* footer section */
+
+/* css for footer */
+footer {
+  position: relative;
+  /* background: linear-gradient(135deg, #27ae60, #145214); */
+  background-image: url(assest/background2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  padding: 40px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 100px;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15px; 
+  background: #0f5256;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 20px;
+  min-width: 250px;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+ 
+ 
+}
+
+.footer-section h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+}
+
+.footer-section h2::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background: #fff;
+  bottom: -5px;
+  left: 0;
+}
+
+.footer-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.contact span, .socials a {
+  display: block;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.socials a {
+  color: #fff;
+  margin-right: 15px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #d4d4d4;
+}
+
+.footer-section.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section.links ul a {
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.footer-section.links ul a:hover {
+  text-decoration: underline;
+  color: #d4d4d4;
+}
+
+.contact-form .text-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.contact-form .btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #fff;
+  color: #0f5256;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition:  0.3s, color 0.3s;
+}
+
+.contact-form .btn:hover {
+  background: #0f5256;
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  background: #0f5256;
+  font-size: 18px;
+ 
+ 
+ 
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  footer{
+    margin-top: 100px;
+  }
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 10px;
+  }
+
+  .footer-section {
+      padding: 10px;
+      min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  footer{
+    margin-top: 100px;
+  }
+  .logo-text {
+      font-size: 24px;
+  }
+
+  .footer-section h2 {
+      font-size: 18px;
+  }
+
+  .footer-section p, .contact span, .socials a, .footer-section.links ul a {
+      font-size: 14px;
+  }
+
+  .contact-form .text-input, .contact-form .btn {
+      font-size: 14px;
+      padding: 10px;
+  }
+
+ 
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="logo">
+                    <a href="#"><img src="assest/logo3.png" alt=""></a>
+                </div>
+                <button type="button" class="nav-toggler">
+                   <span></span>
+                </button>
+                <nav class="nav">
+                   <ul>
+                      <li><a href="index.html" >home</a></li>
+                      <li><a href="index.html#about-us">about</a></li>
+                      <li><a href="product.html" >products</a></li>
+                      <li><a href="delivery.html" class="active">delivery</a></li>
+                      <li><a href="blogs.html">blog</a></li>
+                      <li><a href="contact.html">contact</a></li>
+                   </ul>
+                </nav>
+            </div>
+        </div>
+     </header>
+      <section class="delivery">
+        <div class="delivery-container">
+            <div class="title">
+            <h2>Direct farm-to-table Delivery</h2>
+            <p>Our <span>farm-to-table delivery</span> service offers a seamless experience, ensuring the utmost <span>freshness and convenience</span> for our 
+                customers. Straight from our hydroponic farms, our produce is delivered directly to your <span>table</span>, guaranteeing the <span>highest quality and taste</span>. 
+                Experience the difference with our farm-fresh offerings, delivered with <span>care</span> from our farms to your home</p>
+        </div>
+        <div class="box-container">
+           
+            
+        <div class="card-content">
+            <h4>Delivery Areas</h4>
+            <div class="box">
+              <ul>
+                <li>Area 1</li>
+                <li>Area 2</li>
+                <li>Area 3</li>
+              </ul>
+            </div>
+          </div>
+       <div class="card-content">
+            <h4>Delivery Schedule</h4>
+            <div class="box">
+            <ul>
+                <li>Schedule: Monday to Friday</li>
+                <li>Ordering Process: Place your order online by 12 PM for next-day delivery</li>
+            </ul>
+           </div>
+          </div>
+        
+    </div>
+</div>
+
+<div class="order-process">
+    <div class="order-content">
+         <h4>Ordering process</h4>
+         <ol>
+            <li>Step 1: Go to our website and select the products you want to order.</li>
+            <li>Step 2: Proceed to checkout and choose your delivery date and time.</li>
+            <li>Step 3: Complete the payment process.</li>
+            <li>Step 4: Sit back and relax while we prepare your order for delivery!</li>
+          </ol>
+    </div>
+</div>
+
+<div class="faqs" id="faq">
+    <h3>FAQs</h3>
+    <div class="faq-item">
+        <h4 class="question">How do I place an order?</h4>
+        <p class="answer">You can place an order on our website by selecting the items you want and proceeding to checkout.</p>
+    </div>
+    <div class="faq-item">
+        <h4 class="question"> What should I do if there is an issue with my delivery?</h4>
+        <p class="answer">If you encounter any issues with your delivery, please contact our customer support team immediately. 
+            We will do our best to resolve the issue promptly.</p>
+    </div>
+    <div class="faq-item">
+        <h4 class="question">What should I do if I'm not home during the delivery time?</h4>
+        <p class="answer"> If you're not home during the delivery time, our delivery partner will attempt to leave the package in a safe place or with a neighbor. 
+            You can also provide specific delivery instructions during checkout.</p>
+    </div>
+    <div class="faq-item">
+        <h4 class="question">Can I change my delivery address after placing an order?</h4>
+        <p class="answer">Unfortunately, we cannot change the delivery address once the order is placed. 
+            Please ensure the correct address is provided at the time of ordering.</p>
+    </div>
+    <div class="faq-item">
+        <h4 class="question">What are the delivery charges?</h4>
+        <p class="answer"> Delivery charges vary based on your location and order size. 
+            Please check the delivery information during checkout for details.</p>
+    </div>
+    
+</div>
+      </section>
+
+<!-- footer section -->
+<!-- footer section -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h2 class="logo-text">Suryakanta Organics</h2>
+            <p>Sustainable and fresh hydroponically grown produce delivered straight to your table.</p>
+            <div class="contact">
+                <span><i class="fas fa-phone"></i> &nbsp; +91-1234567890</span>
+                <span><i class="fas fa-envelope"></i> &nbsp; info@suryakantaorganics.com</span>
+                <span><i class="fas fa-map-marker-alt"></i> &nbsp; Suryakanta Ambule House, Murri, Gondia, 441601</span>
+            </div>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i>&nbsp; Facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i>&nbsp; Twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i>&nbsp; Instagram</a>
+                <a href="#"><i class="fab fa-linkedin"></i>&nbsp; Linkedin</a>
+            </div>
+        </div>
+        <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+                <a href="index.html#about-us"><li>About Us</li></a>
+                <a href="product.html"><li>Products</li></a>
+                <a href="blogs.html"><li>Blog/News</li></a>
+                <a href="delivery.html"><li>Delivery</li></a>
+                <a href="contact.html"><li>Contact Us</li></a>
+                <a href="delivery.html#faq"><li>FAQs</li></a>
+            </ul>
+        </div>
+        <div class="footer-section contact-form">
+            <h2>Contact Us</h2>
+            <form action="index.html" method="post">
+                <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                <button type="submit" class="btn btn-big contact-btn">
+                    <i class="fas fa-envelope"></i>
+                    Send
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; suryakantaorganics.com | Designed by Sakshi
+    </div>
+</footer>
+  
+
+
+     <script>
+        // for navigation bar
+        const navToggler = document.querySelector(".nav-toggler");
+        navToggler.addEventListener("click", navToggle);
+
+        function navToggle() {
+          navToggler.classList.toggle("active");
+          const nav = document.querySelector(".nav");
+          nav.classList.toggle("open");
+          if (nav.classList.contains("open")) {
+            nav.style.maxHeight = nav.scrollHeight + "px";
+          } else {
+            nav.removeAttribute("style");
+          }
+        }
+
+        // js for FAQs
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const questions = document.querySelectorAll(".question");
+
+    questions.forEach(function(question) {
+        question.addEventListener("click", function() {
+            const answer = this.nextElementSibling;
+            this.classList.toggle("active");
+            answer.classList.toggle("active");
+            this.parentNode.classList.toggle("active");
+        });
+    });
+});
+
+
+// js for footer section
+document.addEventListener("DOMContentLoaded", function() {
+   const btn = document.querySelector('.contact-btn');
+
+   btn.addEventListener('click', function(e) {
+       e.preventDefault();
+       alert('Your message has been sent!');
+   });
+});
+
+     </script>
+</body>
+</html>
