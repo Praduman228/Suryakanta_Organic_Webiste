@@ -38,7 +38,7 @@
           <!-- start html for hero image section -->
        <section class="hero">
         <div class="hero-text">
-          <h1>Welcome to</h1><span>Suryakanta Organic Farming</span>
+          <h1>Welcome to</h1><span>Suryakanta Organic</span>
           <p>Discover the freshest hydroponically grown produce!</p><br>
           <a href="product.html" class="cta">Explore Products</a>
           <a href="delivery.html" class="cta">Place Order</a>
@@ -199,9 +199,9 @@
                 <h2 class="logo-text">Suryakanta Organics</h2>
                 <p>Sustainable and fresh hydroponically grown produce delivered straight to your table.</p>
                 <div class="contact">
-                    <span><i class="fas fa-phone"></i> &nbsp; +91-1234567890</span>
-                    <span><i class="fas fa-envelope"></i> &nbsp; info@suryakantaorganics.com</span>
-                    <span><i class="fas fa-map-marker-alt"></i> &nbsp; Suryakanta Ambule House, Murri, Gondia, 441601</span>
+                    <span><i class="fas fa-phone"></i> &nbsp; +91-8698105221</span>
+                    <span><i class="fas fa-envelope"></i> &nbsp; organicssuryakanta@gmail.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> &nbsp; Chandrashekar Ward Gondia</span>
                 </div>
                 <div class="socials">
                     <a href="#"><i class="fab fa-facebook"></i>&nbsp; Facebook</a>
@@ -234,7 +234,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; suryakantaorganics.com | Designed by Sakshi
+            &copy; suryakantaorganics.com 
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -265,10 +265,7 @@
         
       },"same")
 
-
-
-
-      gsap.from(".about-container h2", {
+     gsap.from(".about-container h2", {
       x:-200,
       duration:1,
       opacity:0,
@@ -308,6 +305,55 @@
       }
      
      })
+
+     gsap.from(".content h3",{
+      x:-200,
+      duration:1,
+      opacity:0,
+      scrollTrigger:{
+        trigger:".content h3",
+        scoller:"body",
+        
+        start:"top 50%"
+
+      }
+     
+     })
+     gsap.from(".content p",{
+      x:-200,
+      duration:1,
+      
+      opacity:0,
+      scrollTrigger:{
+        trigger:".content h3",
+        scoller:"body",
+        
+        start:"top 50%"
+
+      }})
+      gsap.from(".button",{
+      x:-200,
+      duration:1,
+      
+      opacity:0,
+      scrollTrigger:{
+        trigger:".content h3",
+        scoller:"body",
+       
+        start:"top 50%"
+
+      }})
+      gsap.from(".image img",{
+        x:200,
+        duration:1,
+        opacity:0,
+        scrollTrigger:{
+        trigger:".content h3",
+        scoller:"body",
+        
+        start:"top 50%"
+      }})
+    
      
     </script>
 </body>
